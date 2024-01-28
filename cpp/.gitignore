@@ -42,3 +42,7 @@ _deps
 *.exe
 *.out
 *.app
+
+cpp/hello-world/hello-world
+cpp/lasagna/lasagna
+cpp/last-will/last-will

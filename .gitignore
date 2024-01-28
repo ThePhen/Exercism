@@ -118,6 +118,3 @@ Temporary Items
 
 .clj-kondo/.cache
 .lsp/.cache
-cpp/hello-world/hello-world
-cpp/lasagna/lasagna
-cpp/last-will/last-will
