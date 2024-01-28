@@ -35,7 +35,7 @@ export function threeOfEachThree(deck) {
  * @returns {number[]} deck with only two middle cards
  */
 export function middleTwo(deck) {
-  return deck.slice(4,6);
+  return deck.slice(4, 6);
 }
 
 /**
@@ -49,15 +49,10 @@ export function middleTwo(deck) {
 export function sandwichTrick(deck) {
   var l = deck.length;
   var a = deck[0];
-  var b = deck.slice(1, 6);
-  var c = deck.slice(6, 9);
-  var d = deck[9];
-  deck = [];
-  deck.push(b);
-  deck.push(d);
-  deck.push(a);
-  deck.push(c);
-  return deck;
+  var b = deck.slice(1, l / 2);
+  var c = deck.slice(l / 2, l - 1);
+  var d = deck[l - 1];
+  return [].concat(b, d, a, c);
 }
 
 /**
