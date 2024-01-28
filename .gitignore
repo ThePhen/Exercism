@@ -118,3 +118,4 @@ Temporary Items
 
 .clj-kondo/.cache
 .lsp/.cache
+cpp/hello-world/hello-world
