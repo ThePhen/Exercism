@@ -43,6 +43,6 @@ _deps
 *.out
 *.app
 
-cpp/hello-world/hello-world
-cpp/lasagna/lasagna
-cpp/last-will/last-will
+hello-world/hello-world
+lasagna/lasagna
+last-will/last-will
