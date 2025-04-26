@@ -1,0 +1,22 @@
+{
+  "authors": [],
+  "contributors": [
+    "masters3d",
+    "robtimp"
+  ],
+  "files": {
+    "solution": [
+      "Acronym.m",
+      "Acronym.h"
+    ],
+    "test": [
+      "AcronymTest.m"
+    ],
+    "example": [
+      ".meta/AcronymExample.m"
+    ]
+  },
+  "blurb": "Convert a long phrase to its acronym.",
+  "source": "Julien Vanier",
+  "source_url": "https://github.com/monkbroc"
+}

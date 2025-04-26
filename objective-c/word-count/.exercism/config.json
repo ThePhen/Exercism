@@ -1,0 +1,24 @@
+{
+  "authors": [],
+  "contributors": [
+    "ahalls",
+    "chillpop",
+    "kytrinyx",
+    "masters3d",
+    "SixFiveSoftware"
+  ],
+  "files": {
+    "solution": [
+      "WordCount.m",
+      "WordCount.h"
+    ],
+    "test": [
+      "WordCountTest.m"
+    ],
+    "example": [
+      ".meta/WordCountExample.m"
+    ]
+  },
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}

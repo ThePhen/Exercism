@@ -1,0 +1,22 @@
+{
+  "authors": [],
+  "contributors": [
+    "masters3d",
+    "robtimp"
+  ],
+  "files": {
+    "solution": [
+      "Pangram.m",
+      "Pangram.h"
+    ],
+    "test": [
+      "PangramTest.m"
+    ],
+    "example": [
+      ".meta/PangramExample.m"
+    ]
+  },
+  "blurb": "Determine if a sentence is a pangram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}

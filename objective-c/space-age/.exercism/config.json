@@ -1,0 +1,23 @@
+{
+  "authors": [],
+  "contributors": [
+    "chillpop",
+    "masters3d",
+    "robtimp"
+  ],
+  "files": {
+    "solution": [
+      "SpaceAge.m",
+      "SpaceAge.h"
+    ],
+    "test": [
+      "SpaceAgeTest.m"
+    ],
+    "example": [
+      ".meta/SpaceAgeExample.m"
+    ]
+  },
+  "blurb": "Given an age in seconds, calculate how old someone is in terms of a given planet's solar years.",
+  "source": "Partially inspired by Chapter 1 in Chris Pine's online Learn to Program tutorial.",
+  "source_url": "https://pine.fm/LearnToProgram/?Chapter=01"
+}

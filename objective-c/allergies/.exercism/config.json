@@ -1,0 +1,23 @@
+{
+  "authors": [],
+  "contributors": [
+    "chillpop",
+    "masters3d",
+    "robtimp"
+  ],
+  "files": {
+    "solution": [
+      "Allergies.m",
+      "Allergies.h"
+    ],
+    "test": [
+      "AllergiesTest.m"
+    ],
+    "example": [
+      ".meta/AllergiesExample.m"
+    ]
+  },
+  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
+  "source": "Exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
+  "source_url": "https://turing.edu"
+}
