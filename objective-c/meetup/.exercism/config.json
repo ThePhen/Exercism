@@ -1,0 +1,21 @@
+{
+  "authors": [],
+  "contributors": [
+    "masters3d",
+    "robtimp"
+  ],
+  "files": {
+    "solution": [
+      "Meetup.m",
+      "Meetup.h"
+    ],
+    "test": [
+      "MeetupTest.m"
+    ],
+    "example": [
+      ".meta/MeetupExample.m"
+    ]
+  },
+  "blurb": "Calculate the date of meetups.",
+  "source": "Jeremy Hinegardner mentioned a Boulder meetup that happens on the Wednesteenth of every month"
+}

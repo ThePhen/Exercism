@@ -1,0 +1,23 @@
+{
+  "authors": [],
+  "contributors": [
+    "chillpop",
+    "masters3d",
+    "robtimp"
+  ],
+  "files": {
+    "solution": [
+      "RomanNumerals.m",
+      "RomanNumerals.h"
+    ],
+    "test": [
+      "RomanNumeralsTest.m"
+    ],
+    "example": [
+      ".meta/RomanNumeralsExample.m"
+    ]
+  },
+  "blurb": "Convert modern Arabic numbers into Roman numerals.",
+  "source": "The Roman Numeral Kata",
+  "source_url": "https://codingdojo.org/kata/RomanNumerals/"
+}

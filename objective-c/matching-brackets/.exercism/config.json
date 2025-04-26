@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "AlwynC"
+  ],
+  "contributors": [
+    "masters3d",
+    "robtimp"
+  ],
+  "files": {
+    "solution": [
+      "MatchingBrackets.m",
+      "MatchingBrackets.h"
+    ],
+    "test": [
+      "MatchingBracketsTest.m"
+    ],
+    "example": [
+      ".meta/MatchingBracketsExample.m"
+    ]
+  },
+  "blurb": "Make sure the brackets and braces all match.",
+  "source": "Ginna Baker"
+}

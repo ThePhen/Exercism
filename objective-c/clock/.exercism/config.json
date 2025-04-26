@@ -1,0 +1,21 @@
+{
+  "authors": [],
+  "contributors": [
+    "masters3d",
+    "robtimp"
+  ],
+  "files": {
+    "solution": [
+      "Clock.m",
+      "Clock.h"
+    ],
+    "test": [
+      "ClockTest.m"
+    ],
+    "example": [
+      ".meta/ClockExample.m"
+    ]
+  },
+  "blurb": "Implement a clock that handles times without dates.",
+  "source": "Pairing session with Erin Drummond"
+}

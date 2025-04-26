@@ -1,0 +1,23 @@
+{
+  "authors": [],
+  "contributors": [
+    "chillpop",
+    "kytrinyx",
+    "masters3d"
+  ],
+  "files": {
+    "solution": [
+      "NucleotideCount.m",
+      "NucleotideCount.h"
+    ],
+    "test": [
+      "NucleotideCountTest.m"
+    ],
+    "example": [
+      ".meta/NucleotideCountExample.m"
+    ]
+  },
+  "blurb": "Given a DNA string, compute how many times each nucleotide occurs in the string.",
+  "source": "The Calculating DNA Nucleotides_problem at Rosalind",
+  "source_url": "https://rosalind.info/problems/dna/"
+}

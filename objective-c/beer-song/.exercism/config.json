@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "AlwynC"
+  ],
+  "contributors": [
+    "masters3d",
+    "robtimp"
+  ],
+  "files": {
+    "solution": [
+      "BeerSong.m",
+      "BeerSong.h"
+    ],
+    "test": [
+      "BeerSongTest.m"
+    ],
+    "example": [
+      ".meta/BeerSongExample.m"
+    ]
+  },
+  "blurb": "Produce the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.",
+  "source": "Learn to Program by Chris Pine",
+  "source_url": "https://pine.fm/LearnToProgram/?Chapter=06"
+}
