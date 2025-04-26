@@ -1,4 +1,5 @@
 !yamlscript/v0
 
 defn hello():
-  'Goodbye, Mars!'
+  'Hello, World!'
+
