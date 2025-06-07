@@ -118,3 +118,8 @@ Temporary Items
 
 .clj-kondo/.cache
 .lsp/.cache
+
+*.o
+tests
+*.log
+

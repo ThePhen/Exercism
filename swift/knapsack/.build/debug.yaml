@@ -1,0 +1,112 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "Knapsack-x86_64-apple-macosx15.0-debug.module": ["<Knapsack-x86_64-apple-macosx15.0-debug.module>"]
+  "KnapsackPackageTests-x86_64-apple-macosx15.0-debug.module": ["<KnapsackPackageTests-x86_64-apple-macosx15.0-debug.module>"]
+  "KnapsackPackageTests-x86_64-apple-macosx15.0-debug.test": ["<KnapsackPackageTests-x86_64-apple-macosx15.0-debug.test>"]
+  "KnapsackTests-x86_64-apple-macosx15.0-debug.module": ["<KnapsackTests-x86_64-apple-macosx15.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<Knapsack-x86_64-apple-macosx15.0-debug.module>"]
+  "test": ["<Knapsack-x86_64-apple-macosx15.0-debug.module>","<KnapsackPackageTests-x86_64-apple-macosx15.0-debug.test>","<KnapsackTests-x86_64-apple-macosx15.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/stephenhenderson/Exercism/swift/knapsack/Sources/Knapsack/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/stephenhenderson/Exercism/swift/knapsack/Tests/KnapsackTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/stephenhenderson/Exercism/swift/knapsack/Sources/Knapsack/Item.swift","/Users/stephenhenderson/Exercism/swift/knapsack/Sources/Knapsack/Knapsack.swift"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/sources"]
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/sources"
+
+  "/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.derived/runner.swift"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/sources"]
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/sources"
+
+  "/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.derived/runner.swift"]
+
+  "/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/Item.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/Knapsack.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/runner.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/KnapsackTests.swift.o"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.product/Objects.LinkFileList"
+
+  "/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/stephenhenderson/Exercism/swift/knapsack/Tests/KnapsackTests/KnapsackTests.swift"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/sources"]
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/sources"
+
+  "/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<Knapsack-x86_64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/Item.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/Knapsack.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/Knapsack.swiftmodule"]
+    outputs: ["<Knapsack-x86_64-apple-macosx15.0-debug.module>"]
+
+  "<KnapsackPackageTests-x86_64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/runner.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/KnapsackPackageTests.swiftmodule"]
+    outputs: ["<KnapsackPackageTests-x86_64-apple-macosx15.0-debug.module>"]
+
+  "<KnapsackPackageTests-x86_64-apple-macosx15.0-debug.test>":
+    tool: phony
+    inputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.xctest/Contents/MacOS/KnapsackPackageTests"]
+    outputs: ["<KnapsackPackageTests-x86_64-apple-macosx15.0-debug.test>"]
+
+  "<KnapsackTests-x86_64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/KnapsackTests.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/KnapsackTests.swiftmodule"]
+    outputs: ["<KnapsackTests-x86_64-apple-macosx15.0-debug.module>"]
+
+  "C.Knapsack-x86_64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/Sources/Knapsack/Item.swift","/Users/stephenhenderson/Exercism/swift/knapsack/Sources/Knapsack/Knapsack.swift","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/sources"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/Item.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/Knapsack.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/Knapsack.swiftmodule"]
+    description: "Compiling Swift Module 'Knapsack' (2 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","Knapsack","-emit-dependencies","-emit-module","-emit-module-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/Knapsack.swiftmodule","-output-file-map","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/sources","-I","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/Knapsack-Swift.h","-color-diagnostics","-swift-version","5","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g"]
+
+  "C.KnapsackPackageTests-x86_64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.derived/runner.swift","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/KnapsackTests.swiftmodule","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/sources"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/runner.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/KnapsackPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'KnapsackPackageTests' (1 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","KnapsackPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/KnapsackPackageTests.swiftmodule","-output-file-map","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/sources","-I","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/KnapsackPackageTests-Swift.h","-color-diagnostics","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g"]
+
+  "C.KnapsackPackageTests-x86_64-apple-macosx15.0-debug.test":
+    tool: shell
+    inputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/Item.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Knapsack.build/Knapsack.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.build/runner.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/KnapsackTests.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.xctest/Contents/MacOS/KnapsackPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/KnapsackPackageTests.xctest/Contents/MacOS/KnapsackPackageTests"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-L","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug","-o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.xctest/Contents/MacOS/KnapsackPackageTests","-module-name","KnapsackPackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/usr/lib/swift-5.5/macosx","-target","x86_64-apple-macosx10.13","-Xlinker","-add_ast_path","-Xlinker","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/Knapsack.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/KnapsackPackageTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/KnapsackTests.swiftmodule","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/Library/Developer/Frameworks"]
+
+  "C.KnapsackTests-x86_64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/Tests/KnapsackTests/KnapsackTests.swift","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/Knapsack.swiftmodule","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/sources"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/KnapsackTests.swift.o","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/KnapsackTests.swiftmodule"]
+    description: "Compiling Swift Module 'KnapsackTests' (1 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","KnapsackTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules/KnapsackTests.swiftmodule","-output-file-map","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/KnapsackTests.build/sources","-I","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/stephenhenderson/Exercism/swift/knapsack/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","5","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/stephenhenderson/Exercism/swift/knapsack/Sources/Knapsack/","/Users/stephenhenderson/Exercism/swift/knapsack/Tests/KnapsackTests/","/Users/stephenhenderson/Exercism/swift/knapsack/Package.swift","/Users/stephenhenderson/Exercism/swift/knapsack/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
