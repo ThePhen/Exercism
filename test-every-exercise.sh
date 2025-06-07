@@ -1,21 +1,46 @@
-#! /usr/bin/env zsh
+#! /usr/bin/env bash
 
+WHITE='\033[1;37m'
+YELLOW='\033[1;33m'
+DARK_GRAY='\033[0;37m'
+NC='\033[0m' # No Color
+
+log_file="test_results.log"
 log=()
-for s in */*; do 
-    printf -- '-%.0s' $(seq 100); echo "" | lolcat
-    echo ${s} | figlet -w 200 | lolcat
-    #echo ${s:h} | figlet -w 200 | lolcat
-    time (cd $s; exercism test)
+
+timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+log_entry="${WHITE}${timestamp} 🏁 Starting tests for all exercises${NC}"
+printf "${log_entry}\\n"
+echo -e "${log_entry}" > "$log_file"
+
+for s in *; do 
+
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    log_entry="${WHITE}${timestamp} ⚙️ ${s}${NC} ⚙️"
+    printf "\\n\\n${log_entry}\\n"
+    # echo -e "${log_entry}" >> "${log_file}"
+
+    # time (sleep 1)
+    (cd "$s"; exercism test)
     exit_code=$?
-    if [ $exit_code -ne "0" ]; then
+
+    flag='✅'
+    if [ ${exit_code} -ne "0" ]; then
         flag='❌'
-    else
-        flag='✅'
     fi
-    log+=("${flag} ${exit_code} <- ${s}")
+
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    log_entry="${WHITE}${timestamp}${NC} ${flag} (${exit_code})\\t${WHITE}${s}${NC}"
+    log+=("${log_entry}")
+    echo -e "${log_entry}" >> "${log_file}"
 done
-echo '------'
-for o in $log; do
-    echo $o
+printf "\\n${WHITE}${timestamp} 📋 Results${NC}"
+
+for o in "${log[@]}"; do
+    printf "\\n$o"
 done
-echo '------'
+
+timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+log_entry="${WHITE}${timestamp} 🏁 All tests completed${NC}"
+printf "\\n${log_entry}\\n"
+echo -e "${log_entry}" >> "${log_file}"

@@ -1,0 +1,112 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "ArmstrongNumbers-x86_64-apple-macosx15.0-debug.module": ["<ArmstrongNumbers-x86_64-apple-macosx15.0-debug.module>"]
+  "ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.module": ["<ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.module>"]
+  "ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.test": ["<ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.test>"]
+  "ArmstrongNumbersTests-x86_64-apple-macosx15.0-debug.module": ["<ArmstrongNumbersTests-x86_64-apple-macosx15.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<ArmstrongNumbers-x86_64-apple-macosx15.0-debug.module>"]
+  "test": ["<ArmstrongNumbers-x86_64-apple-macosx15.0-debug.module>","<ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.test>","<ArmstrongNumbersTests-x86_64-apple-macosx15.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Sources/ArmstrongNumbers/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Tests/ArmstrongNumbersTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Sources/ArmstrongNumbers/ArmstrongNumbers.swift"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/sources"]
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/sources"
+
+  "/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.derived/runner.swift"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/sources"]
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/sources"
+
+  "/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.derived/runner.swift"]
+
+  "/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/ArmstrongNumbers.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/runner.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/ArmstrongNumbersTests.swift.o"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.product/Objects.LinkFileList"
+
+  "/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Tests/ArmstrongNumbersTests/ArmstrongNumbersTests.swift"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/sources"]
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/sources"
+
+  "/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<ArmstrongNumbers-x86_64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/ArmstrongNumbers.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbers.swiftmodule"]
+    outputs: ["<ArmstrongNumbers-x86_64-apple-macosx15.0-debug.module>"]
+
+  "<ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/runner.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbersPackageTests.swiftmodule"]
+    outputs: ["<ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.module>"]
+
+  "<ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.test>":
+    tool: phony
+    inputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.xctest/Contents/MacOS/ArmstrongNumbersPackageTests"]
+    outputs: ["<ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.test>"]
+
+  "<ArmstrongNumbersTests-x86_64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/ArmstrongNumbersTests.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbersTests.swiftmodule"]
+    outputs: ["<ArmstrongNumbersTests-x86_64-apple-macosx15.0-debug.module>"]
+
+  "C.ArmstrongNumbers-x86_64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Sources/ArmstrongNumbers/ArmstrongNumbers.swift","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/sources"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/ArmstrongNumbers.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbers.swiftmodule"]
+    description: "Compiling Swift Module 'ArmstrongNumbers' (1 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","ArmstrongNumbers","-emit-dependencies","-emit-module","-emit-module-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbers.swiftmodule","-output-file-map","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/sources","-I","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/ArmstrongNumbers-Swift.h","-color-diagnostics","-swift-version","5","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g"]
+
+  "C.ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.derived/runner.swift","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbersTests.swiftmodule","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/sources"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/runner.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbersPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'ArmstrongNumbersPackageTests' (1 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","ArmstrongNumbersPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbersPackageTests.swiftmodule","-output-file-map","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/sources","-I","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/ArmstrongNumbersPackageTests-Swift.h","-color-diagnostics","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g"]
+
+  "C.ArmstrongNumbersPackageTests-x86_64-apple-macosx15.0-debug.test":
+    tool: shell
+    inputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbers.build/ArmstrongNumbers.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.build/runner.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/ArmstrongNumbersTests.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.xctest/Contents/MacOS/ArmstrongNumbersPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.xctest/Contents/MacOS/ArmstrongNumbersPackageTests"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-L","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug","-o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.xctest/Contents/MacOS/ArmstrongNumbersPackageTests","-module-name","ArmstrongNumbersPackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/usr/lib/swift-5.5/macosx","-target","x86_64-apple-macosx10.13","-Xlinker","-add_ast_path","-Xlinker","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbers.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbersPackageTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbersTests.swiftmodule","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/Library/Developer/Frameworks"]
+
+  "C.ArmstrongNumbersTests-x86_64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Tests/ArmstrongNumbersTests/ArmstrongNumbersTests.swift","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbers.swiftmodule","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/sources"]
+    outputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/ArmstrongNumbersTests.swift.o","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbersTests.swiftmodule"]
+    description: "Compiling Swift Module 'ArmstrongNumbersTests' (1 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","ArmstrongNumbersTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules/ArmstrongNumbersTests.swiftmodule","-output-file-map","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ArmstrongNumbersTests.build/sources","-I","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx10.13","-enable-batch-mode","-index-store-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","5","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Sources/ArmstrongNumbers/","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Tests/ArmstrongNumbersTests/","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Package.swift","/Users/stephenhenderson/Exercism/swift/armstrong-numbers/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
