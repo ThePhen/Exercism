@@ -5,7 +5,7 @@ YELLOW='\033[1;33m'
 DARK_GRAY='\033[0;37m'
 NC='\033[0m' # No Color
 
-log_file="test_results.log"
+log_file=$(mktemp) #"test_results.log"
 log=()
 
 timestamp=$(date +"%Y-%m-%d %H:%M:%S")
